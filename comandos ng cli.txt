@@ -1,0 +1,23 @@
+
+npm install -g @angular/cli
+ng new angular-tour-of-heroes
+cd angular-tour-of-heroes
+ng serve --open
+ng generate component heroes
+ng generate component hero-detail
+ng generate service hero
+
+//If you need to, you can register providers at different levels: in the HeroesComponent, in the AppComponent, in the AppModule. For instance, you could have told the CLI to provide the service at the module level automatically by appending --module=app.
+ng generate service hero --module=app
+
+ng generate component messages
+ng generate service message
+
+
+//An Angular best practice is to load and configure the router in a separate, top-level module that is dedicated to routing and imported by the root AppModule.
+//By convention, the module class name is AppRoutingModule and it belongs in the app-routing.module.ts in the src/app folder.
+// --flat puts the file in src/app instead of its own folder.
+// --module=app tells the CLI to register it in the imports array of the AppModule.
+ng generate module app-routing --flat --module=app
+
+ng generate component dashboard
